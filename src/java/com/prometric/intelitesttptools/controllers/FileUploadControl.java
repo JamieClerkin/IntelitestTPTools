@@ -107,6 +107,7 @@ public class FileUploadControl extends IUserManagerClient implements Serializabl
                     context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Wrong", "Error uploading file!!!"));
                 }
                 context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Success", fileName + " uploaded..."));
+                
                 getUserManager().setContentUploaded(true);
             } else {
                 context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "WRONG File Format", errMessage));
@@ -114,5 +115,5 @@ public class FileUploadControl extends IUserManagerClient implements Serializabl
         } else {
             context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Wrong", "Select a file!!!"));
         }
-    }
+    }    
 }

@@ -13,21 +13,23 @@
         </ui:define>
         <ui:define name="body">
             <p:panel styleClass="ui-panelWithOut">
-                <h1 class="title ui-widget-header ui-corner-all width55">Export Image List</h1>
+                <h1 class="title ui-widget-header ui-corner-all width100">Export Image List</h1>
                 <br />
                 <p:outputLabel value="Please Upload a Zip File named: HTML.Zip, containing the items to process..." />
+                <br /><br />
                 <h:form enctype="multipart/form-data">
-                    <p:fileUpload fileUploadListener="#{fileUploadControl.handleZipFileUpload}" update="growl" auto="false" styleClass="width55" />
+                    <p:fileUpload fileUploadListener="#{fileUploadControl.handleZipFileUpload}" update="growl" auto="false" styleClass="width100" />
                     <p:growl id="growl" showDetail="true"/>
                     <br />       
                     <h:outputText value="Image Items Only: "  />  
                     <p:selectBooleanCheckbox value="#{imageListBean.onlyImages}" />
-                    <br />
-                    <p:commandButton value="Get Image List"  id="button" actionListener="#{imageListBean.tryGetItemImages(event)}" update="table-wrapper growl"  />
+                    <h:panelGrid columns="1" style="float: right;"> 
+                        <p:commandButton value="Get Image List"  id="button" actionListener="#{imageListBean.tryGetItemImages(event)}" update="table-wrapper growl"  />
+                    </h:panelGrid>
                     <br />
                     <br />
                     <h:panelGroup id="table-wrapper">
-                        <p:dataTable id="imageTable" var="itemImage"  rendered="#{imageListBean.visible}" value="#{imageListBean.itemImages}" styleClass="ui-datatable ui-widget width55"
+                        <p:dataTable id="imageTable" var="itemImage"  rendered="#{imageListBean.visible}" value="#{imageListBean.itemImages}" styleClass="ui-datatable ui-widget width100"
                                      paginator="true" rows="10"  
                                      
                                      paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
@@ -50,7 +52,7 @@
                             </p:column>  
                         </p:dataTable> 
                         <br />
-                        <h:panelGrid columns="2" rendered="#{imageListBean.visible}">  
+                        <h:panelGrid columns="2" rendered="#{imageListBean.visible}" style="float: right;">  
                             <p:panel header="Export All Images" styleClass="panelWith" >  
                                 <h:commandLink>  
                                     <p:graphicImage value="/resources/images/excel.png" />  

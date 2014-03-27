@@ -9,12 +9,12 @@
         <h:outputStylesheet library="css" name="default.css" />
         <title>Login</title>
     </h:head>
-    <h:body>
-        <h:outputLink id="loginLink" value="javascript:void(0)" onclick="dlg.show()" title="login"> 
-            <p:graphicImage  library="images" name="login.png" />
-        </h:outputLink>  
+    <h:body onload="dlg.show()">
+        <p:fieldset id="loginFieldSet">            
+                <p:graphicImage id="loginImage" library="images" name="newlogin.png" onclick="dlg.show()" />           
+        </p:fieldset>
         <p:growl id="growl" showDetail="true" life="3000" />  
-        <p:dialog id="dialog" header="Login" widgetVar="dlg" showEffect="explode" hideEffect="shake">  
+        <p:dialog id="dialog" header="Login" widgetVar="dlg" showEffect="explode" hideEffect="puff" modal="true" closable="false">  
             <h:form>  
                 <h:panelGrid columns="2" cellpadding="5">  
                     <h:outputLabel for="username" value="Username:" />

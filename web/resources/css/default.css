@@ -277,3 +277,32 @@ img.right {
    height: 620px;
    width: 55%;
 }
+
+
+#loginFieldSet {
+    width: 100%;
+    text-align: center;
+}
+
+#loginImage {
+    display: block;
+    margin: 0 auto;    
+}
+
+#CreateFieldSet {
+    display: block;
+    margin: 0 auto;
+    width:150px;
+}
+
+.width100 {
+    width: 100%;
+}
+
+.homeNavigationButton {
+    width: 25%;
+    height: 100px;
+    margin:5%;
+    font-size: xx-large;
+    min-width: 250px;
+}

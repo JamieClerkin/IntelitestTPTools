@@ -12,14 +12,17 @@
         </ui:define>
         <ui:define name="body">
             <p:panel styleClass="ui-panelWithOut">
-                <h1 class="title ui-widget-header ui-corner-all width55">Clean HTML Content</h1>
+                <h1 class="title ui-widget-header ui-corner-all width100">Clean HTML Content</h1>
                 <br />
                 <p:outputLabel value="Please Upload a Zip File named: HTML.Zip, containing the items to process..." />
+                <br /><br />
                 <h:form enctype="multipart/form-data">
-                    <p:fileUpload fileUploadListener="#{fileUploadControl.handleZipFileUpload}" update="growl" auto="false" styleClass="width55" />
+                    <p:fileUpload fileUploadListener="#{fileUploadControl.handleZipFileUpload}" update="growl" auto="false" styleClass="width100" />
                     <p:growl id="growl" showDetail="true"/>
-                    <br />                   
-                    <p:commandButton value="Pick Tags"  id="pickButton" actionListener="#{cleanContentBean.tryGetHTMLFiles(event)}" ajax="false" update="table-wrapper growl pickButton" rendered="#{cleanContentBean.showPickButton}" />
+                    <br />  
+                    <h:panelGrid columns="1" style="float: right; margin-right: -5px;"> 
+                        <p:commandButton value="Pick Tags"  id="pickButton" actionListener="#{cleanContentBean.tryGetHTMLFiles(event)}" ajax="false" update="table-wrapper growl pickButton" rendered="#{cleanContentBean.showPickButton}" />
+                    </h:panelGrid>
                     <br />
                     <br />
                     <br />
