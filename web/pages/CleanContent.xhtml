@@ -12,23 +12,23 @@
         </ui:define>
         <ui:define name="body">
             <p:panel styleClass="ui-panelWithOut">
-                <h1 class="title ui-widget-header ui-corner-all width100">Clean HTML Content</h1>
+                <h1 class="title ui-widget-header ui-corner-all width100 IntelitestGreen">Clean HTML Content</h1>
                 <br />
                 <p:outputLabel value="Please Upload a Zip File named: HTML.Zip, containing the items to process..." />
                 <br /><br />
                 <h:form enctype="multipart/form-data">
-                    <p:fileUpload fileUploadListener="#{fileUploadControl.handleZipFileUpload}" update="growl" auto="false" styleClass="width100" />
+                    <p:fileUpload fileUploadListener="#{fileUploadControl.handleZipFileUpload}" update="growl" auto="false" styleClass="width100 IntelitestGreen" />
                     <p:growl id="growl" showDetail="true"/>
                     <br />  
-                    <h:panelGrid columns="1" style="float: right; margin-right: -5px;"> 
-                        <p:commandButton value="Pick Tags"  id="pickButton" actionListener="#{cleanContentBean.tryGetHTMLFiles(event)}" ajax="false" update="table-wrapper growl pickButton" rendered="#{cleanContentBean.showPickButton}" />
+                    <h:panelGrid columns="1" style="float: right;"> 
+                        <p:commandButton styleClass="IntelitestGreen" value="Pick Tags"  id="pickButton" actionListener="#{cleanContentBean.tryGetHTMLFiles(event)}" ajax="false" update="table-wrapper growl pickButton" rendered="#{cleanContentBean.showPickButton}" />
                     </h:panelGrid>
                     <br />
                     <br />
                     <br />
                     <h:panelGroup id="table-wrapper" >
                         <p:pickList id="pickList" value="#{cleanContentBean.htmlTags}" var="tag"   
-                                    itemLabel="#{tag}" itemValue="#{tag}"  effect="bounce" 
+                                    itemLabel="#{tag}" itemValue="#{tag}"  effect="pulsate" 
                                     showCheckbox="true"  
                                     showSourceFilter="true" showTargetFilter="true" 
                                     filterMatchMode="contains" 
@@ -44,10 +44,11 @@
                             </p:column> 
                         </p:pickList> 
                         <br />
+                        <h:panelGrid columns="3">
                         <h:outputText value="Unicode Convert HTML: " rendered="#{cleanContentBean.visible}" />  
-                        <p:selectBooleanCheckbox value="#{cleanContentBean.unicodeConvert}" rendered="#{cleanContentBean.visible}" /> 
-                        <br />
-                        <p:commandButton value="Remove HTML from Items" rendered="#{cleanContentBean.visible}" actionListener="#{cleanContentBean.cleanHTMLContent(event)}" ajax="false" update="table-wrapper downloadLink pickButton growl"/> 
+                        <p:selectBooleanCheckbox value="#{cleanContentBean.unicodeConvert}" rendered="#{cleanContentBean.visible}" />                         
+                        <p:commandButton styleClass="IntelitestGreen" style="margin-left: 125px" value="Remove HTML from Items" rendered="#{cleanContentBean.visible}" actionListener="#{cleanContentBean.cleanHTMLContent(event)}" ajax="false" update="table-wrapper downloadLink pickButton growl"/> 
+                        </h:panelGrid>
                         <p:commandButton id="downloadLink" value="Download Cleaned Items" actionListener="#{fileDownloadController.prepZipDownload(event)}" ajax="false" icon="ui-icon-arrowthichk-s" rendered="#{cleanContentBean.showDownLoad}"> 
                             <p:fileDownload value="#{fileDownloadController.download}" />
                         </p:commandButton>

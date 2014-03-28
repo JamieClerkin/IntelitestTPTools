@@ -2,18 +2,20 @@ package com.prometric.intelitesttptools.controllers;
 
 import com.prometric.intelitesttptools.Repository.UserManager;
 import com.prometric.intelitesttptools.service.HtmlContentCleanerService;
+import static com.sun.faces.facelets.util.Path.context;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.faces.application.FacesMessage;
-import org.primefaces.model.DualListModel;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import net.lingala.zip4j.exception.ZipException;
+import org.primefaces.context.RequestContext;
+import org.primefaces.model.DualListModel;
 
 /**
  * @author Patrick.MacCnaimhin

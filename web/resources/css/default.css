@@ -122,6 +122,7 @@ img.right {
 .title {
     height: 30px;
     width: 100%;
+    color: #616161;
 }
 
 .title a {
@@ -302,7 +303,28 @@ img.right {
 .homeNavigationButton {
     width: 25%;
     height: 100px;
-    margin:5%;
-    font-size: xx-large;
-    min-width: 250px;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    min-width: 250px !important;
+}
+
+.IntelitestGreen {
+    background-color: #8cc63f !important;
+}
+
+.ui-widget-header {
+    background-color: #8cc63f !important;
+}
+
+.ui-button {
+   min-width: 150px; 
+   margin-right: -5px;
+   color:#6d6d6d !important;
+}
+
+.ui-picklist button {
+    min-width: 50px !important; 
+    width: 50px !important;
+   margin-right: 0px !important;
 }

@@ -35,6 +35,13 @@ public class ImageListBean extends IUserManagerClient implements Serializable {
     private int itemsWithImages;
     private UserManager userManager;
     private boolean onlyImages;
+    
+    
+    private boolean showList;
+
+    public boolean isShowList() {
+        return showList;
+    }
 
     public ImageListBean() {
         initialize();
@@ -47,6 +54,7 @@ public class ImageListBean extends IUserManagerClient implements Serializable {
             itemsWithImages = service.itemsWithImages();
             if (getUserManager().isContentUploaded()) {
                 setVisible(true);
+                showList = true;
             }
         } catch (ZipException e) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Can not obtain Image List... Please upload a HTML.zip file."));

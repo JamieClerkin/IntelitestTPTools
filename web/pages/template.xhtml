@@ -19,9 +19,9 @@
             <p:growl id="growl" showDetail="true" life="3000" /> 
             <p:layout fullPage="true">
                 <p:layoutUnit position="north" size="86" resizable="true" closable="true" collapsible="true" >
-                    <h:panelGrid columns="2" style="width: 100%"  >
+                    <h:panelGrid columns="2" style="width: 100%;"  >
                         <h:graphicImage value="/resources/images/tptools.png" height="64"/>
-                        <h:panelGrid columns="2" style="float: right; margin-right: 9px;">
+                        <h:panelGrid columns="2" style="float: right; margin-right: 10px;">
                             <p:outputLabel value="Welcome #{userManager.username}" style="vertical-align: text-bottom" />
                             <p:commandButton id="logout" type="submit" value="Logout" action="#{userManager.logout()}" 
                                          title="Logout" update="growl" immediate="true"/>
@@ -32,7 +32,7 @@
                     <div style="text-align: center; height: 34px;"><h:graphicImage value="/resources/images/prometric.png" /></div>
                 </p:layoutUnit>
                 <p:layoutUnit position="west" size="196" header="Intelitest TP Tools" collapsible="true">
-                    <p:menu>
+                    <p:menu >
                         <p:submenu label="Navigate">
                             <p:menuitem value="Home" url="Welcome.xhtml" />
                             <p:menuitem value="Export Image List" url="ImageList.xhtml" />
